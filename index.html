@@ -622,7 +622,7 @@
                 
               
 
-              <time title="创建时间：2019-05-01 13:10:42 / 修改时间：22:22:48" itemprop="dateCreated datePublished" datetime="2019-05-01T13:10:42+08:00">2019-05-01</time>
+              <time title="创建时间：2019-05-01 13:10:42 / 修改时间：22:28:56" itemprop="dateCreated datePublished" datetime="2019-05-01T13:10:42+08:00">2019-05-01</time>
             
 
             
@@ -680,7 +680,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">7.2k</span>
+                <span title="本文字数">7.1k</span>
               
 
               
@@ -694,7 +694,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">7 分钟</span>
+                <span title="阅读时长">6 分钟</span>
               
             </div>
           
@@ -715,176 +715,20 @@
 
       
         
-          
-            <p><img src="/static/upload-images.jianshu.io/upload_images/2256672-06627c71f0d8c0dc.jpg" alt></p>
+          <p><img src="/static/upload-images.jianshu.io/upload_images/2256672-06627c71f0d8c0dc.jpg" alt></p>
 <blockquote>
 <p>无论即将到来的是大数据时代还是人工智能时代，亦或是传统行业使用人工智能在云上处理大数据的时代，作为一个有理想有追求的程序员，不懂深度学习（Deep Learning）这个超热的技术，会不会感觉马上就out了？现在救命稻草来了，《零基础入门深度学习》系列文章旨在讲帮助爱编程的你从零基础达到入门级水平。零基础意味着你不需要太多的数学知识，只要会写程序就行了，没错，这是专门为程序员写的文章。虽然文中会有很多公式你也许看不懂，但同时也会有更多的代码，程序员的你一定能看懂的（我周围是一群狂热的Clean Code程序员，所以我写的代码也不会很差）。</p>
 </blockquote>
-<h2 id="文章列表"><a href="#文章列表" class="headerlink" title="文章列表"></a>文章列表</h2><ul>
-<li>零基础入门深度学习(1) - 感知器 </li>
-<li>零基础入门深度学习(2) - 线性单元和梯度下降 </li>
-<li>零基础入门深度学习(3) - 神经网络和反向传播算法 </li>
-<li>零基础入门深度学习(4) - 卷积神经网络 </li>
-<li>零基础入门深度学习(5) - 循环神经网络 </li>
-<li>零基础入门深度学习(6) - 长短时记忆网络(LSTM) </li>
-<li>零基础入门深度学习(7) - 递归神经网络</li>
-</ul>
 <h2 id="深度学习是啥"><a href="#深度学习是啥" class="headerlink" title="深度学习是啥"></a>深度学习是啥</h2><p>在人工智能领域，有一个方法叫机器学习。在机器学习这个方法里，有一类算法叫神经网络。神经网络如下图所示：</p>
-<p><img src="/static/upload-images.jianshu.io/upload_images/2256672-c6f640c11a06ac2e.png" alt></p>
-<p>上图中每个圆圈都是一个神经元，每条线表示神经元之间的连接。我们可以看到，上面的神经元被分成了多层，层与层之间的神经元有连接，而层内之间的神经元没有连接。最左边的层叫做 <strong>输入层</strong> ，这层负责接收输入数据；最右边的层叫 <strong>输出层</strong> ，我们可以从这层获取神经网络输出数据。输入层和输出层之间的层叫做 <strong>隐藏层</strong> 。</p>
-<p>隐藏层比较多（大于2）的神经网络叫做深度神经网络。而深度学习，就是使用深层架构（比如，深度神经网络）的机器学习方法。</p>
-<p>那么深层网络和浅层网络相比有什么优势呢？简单来说深层网络能够表达力更强。事实上，一个仅有一个隐藏层的神经网络就能拟合任何一个函数，但是它需要很多很多的神经元。而深层网络用少得多的神经元就能拟合同样的函数。也就是为了拟合一个函数，要么使用一个浅而宽的网络，要么使用一个深而窄的网络。而后者往往更节约资源。</p>
-<p>深层网络也有劣势，就是它不太容易训练。简单的说，你需要大量的数据，很多的技巧才能训练好一个深层网络。这是个手艺活。</p>
-<h2 id="感知器"><a href="#感知器" class="headerlink" title="感知器"></a>感知器</h2><p>看到这里，如果你还是一头雾水，那也是很正常的。为了理解神经网络，我们应该先理解神经网络的组成单元—— <strong>神经元</strong> 。神经元也叫做 <strong>感知器</strong> 。感知器算法在上个世纪50-70年代很流行，也成功解决了很多问题。并且，感知器算法也是非常简单的。</p>
-<h3 id="感知器的定义"><a href="#感知器的定义" class="headerlink" title="感知器的定义"></a>感知器的定义</h3><p>下图是一个感知器：</p>
-<p><img src="/static/upload-images.jianshu.io/upload_images/2256672-801d65e79bfc3162.png" alt></p>
-<p>可以看到，一个感知器有如下组成部分：</p>
-<ul>
-<li><p><strong>输入权值</strong> 一个感知器可以接收多个输入 $(x_1, x_2, \dots, x_n | x_i \in \Re)$，每个输入上有一个 <strong>权值</strong> $w_i \in \Re$，此外还有一个 <strong>偏置项</strong> $b \in \Re$ ，就是上图中的 $w_0$ 。</p>
-</li>
-<li><p><strong>激活函数</strong> 感知器的激活函数可以有很多选择，比如我们可以选择下面这个<strong>阶跃函数</strong> $f$ 来作为激活函数：</p>
-</li>
-</ul>
-<script type="math/tex; mode=display">
-f(z)=\begin{cases}
-1 \quad z\gt 0 \\
-\\
-0 \quad othercase \\
-\end{cases}
-\tag{1}</script><ul>
-<li><strong>输出</strong> 感知器的输出由下面这个公式来计算</li>
-</ul>
-<script type="math/tex; mode=display">
-y = f(w \bullet x + b)
-\tag{公式1}</script><p>如果看完上面的公式一下子就晕了，不要紧，我们用一个简单的例子来帮助理解。</p>
-<h4 id="例子：用感知器实现and函数"><a href="#例子：用感知器实现and函数" class="headerlink" title="例子：用感知器实现and函数"></a>例子：用感知器实现<code>and</code>函数</h4><p>我们设计一个感知器，让它来实现<code>and</code>运算。程序员都知道，<code>and</code>是一个二元函数（带有两个参数 $x_1$ 和 $x_2$），下面是它的 <strong>真值表</strong>：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>$x_1$</th>
-<th>$x_2$</th>
-<th>$y$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>为了计算方便，我们用0表示 <strong>false</strong> ，用1表示 <strong>true</strong> 。这没什么难理解的，对于C语言程序员来说，这是天经地义的。</p>
-<p>我们令 $w_1 = 0.5; w_2 = 0.5; b = -0.8$，而激活函数 $f$ 就是前面写出来的 <strong>阶跃函数</strong> ，这时，感知器就相当于<code>and</code>函数。不明白？我们验算一下：</p>
-<p>输入上面真值表的第一行，即$x_1 = 0; x_2 = 0$，那么根据公式(1)，计算输出： </p>
-<script type="math/tex; mode=display">
-\begin{align*}
-y &= f(w \bullet x + b)\tag{2} \\
-&= f(w_1 x_1 + w_2 x_2 + b )\tag{3} \\
-&= f(0.5 \times 0 + 0.5 \times 0 - 0.8)\tag{4} \\
-&= f(-0.8)\tag{5} \\
-&= 0\tag{6}
-\end{align*}</script><p>也就是当 $x_1 x_2$ 都为0的时候，$y$ 为0，这就是 <strong>真值表</strong> 的第一行。读者可以自行验证上述真值表的第二、三、四行。</p>
-<h4 id="例子：用感知器实现or函数"><a href="#例子：用感知器实现or函数" class="headerlink" title="例子：用感知器实现or函数"></a>例子：用感知器实现<code>or</code>函数</h4><p>同样，我们也可以用感知器来实现<code>or</code>运算。仅仅需要把偏置项 $b$ 的值设置为-0.3就可以了。我们验算一下，下面是<code>or</code>运算的 <strong>真值表</strong> ：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>$x_1$</th>
-<th>$x_2$</th>
-<th>$y$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>我们来验算第二行，这时的输入是 $x_1 = 0; x_2 = 1$ ，带入公式(1)：</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-y &= f(w \bullet x + b)\tag{7} \\
-&= f(w_1 x_1 + w_2 x_2 + b )\tag{8} \\
-&= f(0.5 \times 0 + 0.5 \times 1 - 0.3)\tag{9} \\
-&= f(0.2)\tag{10} \\
-&= 1\tag{11}
-\end{align*}</script><p>也就是当 $x_1 = 0; x_2 = 1$ 时， $y$ 为1，即<code>or</code> <strong>真值表</strong> 第二行。读者可以自行验证其它行。</p>
-<h3 id="感知器还能做什么"><a href="#感知器还能做什么" class="headerlink" title="感知器还能做什么"></a>感知器还能做什么</h3><p>事实上，感知器不仅仅能实现简单的布尔运算。它可以拟合任何的线性函数，任何 <strong>线性分类</strong> 或 <strong>线性回归</strong> 问题都可以用感知器来解决。前面的布尔运算可以看作是 <strong>二分类</strong> 问题，即给定一个输入，输出0（属于分类0）或1（属于分类1）。如下面所示，<code>and</code>运算是一个线性分类问题，即可以用一条直线把分类0（false，红叉表示）和分类1（true，绿点表示）分开。</p>
-<p><img src="/static/upload-images.jianshu.io/upload_images/2256672-acff576747ef4259.png" alt></p>
-<p>然而，感知器却不能实现异或运算，如下图所示，异或运算不是线性的，你无法用一条直线把分类0和分类1分开。</p>
-<p><img src="/static/upload-images.jianshu.io/upload_images/2256672-9b651d237936781c.png" alt></p>
-<h3 id="感知器的训练"><a href="#感知器的训练" class="headerlink" title="感知器的训练"></a>感知器的训练</h3><p>现在，你可能困惑前面的权重项和偏置项的值是如何获得的呢？这就要用到感知器训练算法：将权重项和偏置项初始化为0，然后，利用下面的 <strong>感知器规则</strong> 迭代的修改 $w_i$ 和 $b$ ，直到训练完成。</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-w_i &\gets w_i + \Delta w_i \tag{12} \\
-b &\gets b + \Delta b \tag{13}
-\end{align*}</script><p>其中: </p>
-<script type="math/tex; mode=display">
-\begin{align*}
-\Delta w_i &= \eta(t-y)x_i \tag{14} \\
-\Delta b &= \eta(t-y) \tag{15}
-\end{align*}</script><p> $w_i$ 是与输入 $x_i$ 对应的权重项， $b$ 是偏置项。事实上，可以把 $b$ 看作是值永远为1的输入 $x_b$ 所对应的权重。 $t$ 是训练样本的<code>实际值</code>，一般称之为<code>label</code>。而是 $y$ 感知器的输出值，它是根据 <strong>公式(1)</strong> 计算得出。 $\eta$ 是一个称为 <strong>学习速率</strong> 的常数，其作用是控制每一步调整权的幅度。</p>
-<p>每次从训练数据中取出一个样本的输入向量 $\mathrm{x}$ ，使用感知器计算其输出 $y$，再根据上面的规则来调整权重。每处理一个样本就调整一次权重。经过多轮迭代后（即全部的训练数据被反复处理多轮），就可以训练出感知器的权重，使之实现目标函数。</p>
-<h4 id="编程实战：实现感知器"><a href="#编程实战：实现感知器" class="headerlink" title="编程实战：实现感知器"></a>编程实战：实现感知器</h4><blockquote>
-<p>完整代码请参考GitHub: <a href="https://github.com/hanbt/learn_dl/blob/master/perceptron.py" target="_blank" rel="noopener">https://github.com/hanbt/learn_dl/blob/master/perceptron.py</a> (python2.7)</p>
-</blockquote>
-<p>对于程序员来说，没有什么比亲自动手实现学得更快了，而且，很多时候一行代码抵得上千言万语。接下来我们就将实现一个感知器。</p>
-<p>下面是一些说明：</p>
-<ul>
-<li>使用python语言。python在机器学习领域用的很广泛，而且，写python程序真的很轻松。</li>
-<li>面向对象编程。面向对象是特别好的管理复杂度的工具，应对复杂问题时，用面向对象设计方法很容易将复杂问题拆解为多个简单问题，从而解救我们的大脑。</li>
-<li>没有使用numpy。numpy实现了很多基础算法，对于实现机器学习算法来说是个必备的工具。但为了降低读者理解的难度，下面的代码只用到了基本的python（省去您去学习numpy的时间）。</li>
-</ul>
-<p>下面是感知器类的实现，非常简单。去掉注释只有27行，而且还包括为了美观（每行不超过60个字符）而增加的很多换行。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Perceptron</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, input_num, activator)</span>:</span></span><br><span class="line">        <span class="string">'''</span></span><br><span class="line"><span class="string">        初始化感知器，设置输入参数的个数，以及激活函数。</span></span><br><span class="line"><span class="string">        激活函数的类型为double -&gt; double</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        self.activator = activator</span><br><span class="line">        <span class="comment"># 权重向量初始化为0</span></span><br><span class="line">        self.weights = [<span class="number">0.0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(input_num)]</span><br><span class="line">        <span class="comment"># 偏置项初始化为0</span></span><br><span class="line">        self.bias = <span class="number">0.0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''</span></span><br><span class="line"><span class="string">        打印学习到的权重、偏置项</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'weights\t:%s\nbias\t:%f\n'</span> % (self.weights, self.bias)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, input_vec)</span>:</span></span><br><span class="line">        <span class="string">'''</span></span><br><span class="line"><span class="string">        输入向量，输出感知器的计算结果</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="comment"># 把input_vec[x1,x2,x3...]和weights[w1,w2,w3,...]打包在一起</span></span><br><span class="line">        <span class="comment"># 变成[(x1,w1),(x2,w2),(x3,w3),...]</span></span><br><span class="line">        <span class="comment"># 然后利用map函数计算[x1*w1, x2*w2, x3*w3]</span></span><br><span class="line">        <span class="comment"># 最后利用reduce求和</span></span><br><span class="line">        <span class="keyword">return</span> self.activator(</span><br><span class="line">            reduce(<span class="keyword">lambda</span> a, b: a + b,</span><br><span class="line">                   map(<span class="keyword">lambda</span> (x, w): x * w,  </span><br><span class="line">                       zip(input_vec, self.weights))</span><br><span class="line">                , <span class="number">0.0</span>) + self.bias)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">(self, input_vecs, labels, iteration, rate)</span>:</span></span><br><span class="line">        <span class="string">'''</span></span><br><span class="line"><span class="string">        输入训练数据：一组向量、与每个向量对应的label；以及训练轮数、学习率</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(iteration):</span><br><span class="line">            self._one_iteration(input_vecs, labels, rate)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_one_iteration</span><span class="params">(self, input_vecs, labels, rate)</span>:</span></span><br><span class="line">        <span class="string">'''</span></span><br><span class="line"><span class="string">        一次迭代，把所有的训练数据过一遍</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="comment"># 把输入和输出打包在一起，成为样本的列表[(input_vec, label), ...]</span></span><br><span class="line">        <span class="comment"># 而每个训练样本是(input_vec, label)</span></span><br><span class="line">        samples = zip(input_vecs, labels)</span><br><span class="line">        <span class="comment"># 对每个样本，按照感知器规则更新权重</span></span><br><span class="line">        <span class="keyword">for</span> (input_vec, label) <span class="keyword">in</span> samples:</span><br><span class="line">            <span class="comment"># 计算感知器在当前权重下的输出</span></span><br><span class="line">            output = self.predict(input_vec)</span><br><span class="line">            <span class="comment"># 更新权重</span></span><br><span class="line">            self._update_weights(input_vec, output, label, rate)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_update_weights</span><span class="params">(self, input_vec, output, label, rate)</span>:</span></span><br><span class="line">        <span class="string">'''</span></span><br><span class="line"><span class="string">        按照感知器规则更新权重</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="comment"># 把input_vec[x1,x2,x3,...]和weights[w1,w2,w3,...]打包在一起</span></span><br><span class="line">        <span class="comment"># 变成[(x1,w1),(x2,w2),(x3,w3),...]</span></span><br><span class="line">        <span class="comment"># 然后利用感知器规则更新权重</span></span><br><span class="line">        delta = label - output</span><br><span class="line">        self.weights = map(</span><br><span class="line">            <span class="keyword">lambda</span> (x, w): w + rate * delta * x,</span><br><span class="line">            zip(input_vec, self.weights))</span><br><span class="line">        <span class="comment"># 更新bias</span></span><br><span class="line">        self.bias += rate * delta</span><br></pre></td></tr></table></figure>
-<p>接下来，我们利用这个感知器类去实现<code>and</code>函数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    定义激活函数f</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> <span class="keyword">if</span> x &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_training_dataset</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    基于and真值表构建训练数据</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    <span class="comment"># 构建训练数据</span></span><br><span class="line">    <span class="comment"># 输入向量列表</span></span><br><span class="line">    input_vecs = [[<span class="number">1</span>,<span class="number">1</span>], [<span class="number">0</span>,<span class="number">0</span>], [<span class="number">1</span>,<span class="number">0</span>], [<span class="number">0</span>,<span class="number">1</span>]]</span><br><span class="line">    <span class="comment"># 期望的输出列表，注意要与输入一一对应</span></span><br><span class="line">    <span class="comment"># [1,1] -&gt; 1, [0,0] -&gt; 0, [1,0] -&gt; 0, [0,1] -&gt; 0</span></span><br><span class="line">    labels = [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> input_vecs, labels    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_and_perceptron</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    使用and真值表训练感知器</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    <span class="comment"># 创建感知器，输入参数个数为2（因为and是二元函数），激活函数为f</span></span><br><span class="line">    p = Perceptron(<span class="number">2</span>, f)</span><br><span class="line">    <span class="comment"># 训练，迭代10轮, 学习速率为0.1</span></span><br><span class="line">    input_vecs, labels = get_training_dataset()</span><br><span class="line">    p.train(input_vecs, labels, <span class="number">10</span>, <span class="number">0.1</span>)</span><br><span class="line">    <span class="comment">#返回训练好的感知器</span></span><br><span class="line">    <span class="keyword">return</span> p</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>: </span><br><span class="line">    <span class="comment"># 训练and感知器</span></span><br><span class="line">    and_perception = train_and_perceptron()</span><br><span class="line">    <span class="comment"># 打印训练获得的权重</span></span><br><span class="line">    <span class="keyword">print</span> and_perception</span><br><span class="line">    <span class="comment"># 测试</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'1 and 1 = %d'</span> % and_perception.predict([<span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'0 and 0 = %d'</span> % and_perception.predict([<span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'1 and 0 = %d'</span> % and_perception.predict([<span class="number">1</span>, <span class="number">0</span>])</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'0 and 1 = %d'</span> % and_perception.predict([<span class="number">0</span>, <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
-<p>将上述程序保存为perceptron.py文件，通过命令行执行这个程序，其运行结果为：</p>
-<p><img src="/static/upload-images.jianshu.io/upload_images/2256672-1e66158656366b57.png" alt></p>
-<p>神奇吧！感知器竟然完全实现了<code>and</code>函数。读者可以尝试一下利用感知器实现其它函数。</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>终于看（写）到小结了…，大家都累了。对于零基础的你来说，走到这里应该已经很烧脑了吧。没关系，休息一下。值得高兴的是，你终于已经走出了深度学习入门的第一步，这是巨大的进步；坏消息是，这仅仅是最简单的部分，后面还有无数艰难险阻等着你。不过，你学的困难往往意味着别人学的也困难，掌握一门高门槛的技艺，进可糊口退可装逼，是很值得的。</p>
-<p>下一篇文章，我们将讨论另外一种感知器： <strong>线性单元</strong> ，并由此引出一种可能是最最重要的优化算法： <strong>梯度下降</strong> 算法。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
-<li>Tom M. Mitchell, “机器学习”, 曾华军等译, 机械工业出版社</li>
-</ol>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/01/deeplearning-quickstart-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -2483,7 +2327,7 @@ b &\gets b + \Delta b \tag{13}
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">16 分钟</span>
+    <span title="站点阅读时长">15 分钟</span>
   
 </div>
 
