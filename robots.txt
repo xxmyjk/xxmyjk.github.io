@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Allow: /tags/
+Allow: /categories/
+Allow: /archives/
+
+Sitemap: https://blog.github.pub/sitemap.xml
+Sitemap: https://blog.github.pub/baidusitemap.xml
