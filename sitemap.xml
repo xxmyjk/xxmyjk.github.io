@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.github.pub/2019/05/01/deeplearning-quickstart-menu/</loc>
+    
+    <lastmod>2019-05-01T14:23:58.825Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.github.pub/2019/05/01/deeplearning-quickstart-1/</loc>
     
-    <lastmod>2019-05-01T06:37:10.406Z</lastmod>
+    <lastmod>2019-05-01T14:22:48.509Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.github.pub/2019/04/16/install-k8s-cluster-with-gpu-support/</loc>
+    
+    <lastmod>2019-05-01T13:37:58.705Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.github.pub/2016/03/10/2016-reading-list/</loc>
+    
+    <lastmod>2019-05-01T13:37:54.304Z</lastmod>
     
   </url>
   
@@ -30,23 +51,9 @@
   </url>
   
   <url>
-    <loc>https://blog.github.pub/2019/04/16/install-k8s-cluster-with-gpu-support/</loc>
-    
-    <lastmod>2019-04-24T09:50:41.086Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.github.pub/2019/04/24/resolve-NVML-driver-version-mismatch/</loc>
     
     <lastmod>2019-04-24T09:45:55.450Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.github.pub/2016/03/10/2016-reading-list/</loc>
-    
-    <lastmod>2019-04-16T04:24:02.777Z</lastmod>
     
   </url>
   

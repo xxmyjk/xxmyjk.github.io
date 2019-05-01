@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.github.pub/2019/05/01/deeplearning-quickstart-menu/</loc>
+    <lastmod>2019-05-01</lastmod>
+  </url>  <url>
     <loc>https://blog.github.pub/2019/05/01/deeplearning-quickstart-1/</loc>
     <lastmod>2019-05-01</lastmod>
   </url>  <url>
     <loc>https://blog.github.pub/2019/04/16/install-k8s-cluster-with-gpu-support/</loc>
-    <lastmod>2019-04-24</lastmod>
+    <lastmod>2019-05-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.github.pub/2016/03/10/2016-reading-list/</loc>
+    <lastmod>2019-05-01</lastmod>
   </url>  <url>
     <loc>https://blog.github.pub/2019/04/24/resolve-NVML-driver-version-mismatch/</loc>
     <lastmod>2019-04-24</lastmod>
-  </url>  <url>
-    <loc>https://blog.github.pub/2016/03/10/2016-reading-list/</loc>
-    <lastmod>2019-04-16</lastmod>
   </url>  <url>
     <loc>https://blog.github.pub/2016/10/26/clear-float-of-ul/</loc>
     <lastmod>2016-10-26</lastmod>
