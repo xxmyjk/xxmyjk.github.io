@@ -104,16 +104,16 @@
 
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="靳懿的个人博客">
+<meta property="og:title" content="∑">
 <meta property="og:url" content="https://blog.github.pub/page/2/index.html">
-<meta property="og:site_name" content="靳懿的个人博客">
+<meta property="og:site_name" content="∑">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="靳懿的个人博客">
+<meta name="twitter:title" content="∑">
 
 
 
-  <link rel="alternate" href="/atom.xml" title="靳懿的个人博客" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="∑" type="application/atom+xml">
 
 
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title>靳懿的个人博客 – xxmyjk</title>
+  <title>∑ – xxmyjk</title>
   
 
 
@@ -200,7 +200,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">靳懿的个人博客</span>
+        <span class="site-title">∑</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -380,6 +380,187 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.github.pub/2016/10/26/clear-float-of-ul/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="靳懿">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/static/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="∑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2016/10/26/clear-float-of-ul/" class="post-title-link" itemprop="url">Css中清除浮动的几种方式</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          
+
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-10-26 18:22:15 / 修改时间：18:58:47" itemprop="dateCreated datePublished" datetime="2016-10-26T18:22:15+08:00">2016-10-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>前端使用 <code>ul &gt; li</code> + <code>float</code> 方式生成一个 <code>navbar</code> 是一种常见的页面展示手段, 但是浮动之后会导致<code>ul</code>高度无法正常撑起, 所以需要清除浮动以正常撑起父元素高度. 这里介绍几种常见的浮动清除的方式.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">list-style-type</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: right;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: <span class="number">5%</span>;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/10/26/clear-float-of-ul/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.github.pub/2016/10/19/nodejs-versions-update-mark-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -389,7 +570,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="靳懿的个人博客">
+      <meta itemprop="name" content="∑">
     </span>
 
     
@@ -460,7 +641,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">308</span>
+                <span title="本文字数">314</span>
               
 
               
@@ -497,9 +678,12 @@
         
           
             <p>v6今天LTS, 官方pending了半个多月今天终于up了. 记录一下node主要版本更新内容, 方便选择. 关于官方进度及相关版本计划可以参考<a href="https://github.com/nodejs/lts" target="_blank" rel="noopener">这里</a>, 看起来现在用<code>V4</code> 和 <code>V6</code> 是明智的, <code>V5</code>还是放弃吧.</p>
-<h2 id="v4-x"><a href="#v4-x" class="headerlink" title="v4.x"></a>v4.x</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">v4 更新</span><br><span class="line">1. 模板字符串</span><br><span class="line">2. 类语法糖</span><br><span class="line">3. 箭头函数</span><br><span class="line">4. 对象字面量</span><br><span class="line">5. Promise</span><br><span class="line">6. 新的字符串方法</span><br><span class="line">7. let 和 const</span><br></pre></td></tr></table></figure>
-<h2 id="v6-x"><a href="#v6-x" class="headerlink" title="v6.x"></a>v6.x</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">nodejs更新主要新特性</span><br><span class="line">1. 默认函数参数</span><br><span class="line">2. 展开操作符</span><br><span class="line">3. 解构赋值</span><br><span class="line">4. new.target</span><br><span class="line">5. Proxy, 原生对象</span><br><span class="line">6. Reflect, 原生对象</span><br><span class="line">7. Symbol, 原生对象</span><br></pre></td></tr></table></figure>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<h2 id="v4x"><a class="markdownIt-Anchor" href="#v4x"></a> v4.x</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">v4 更新</span><br><span class="line">1. 模板字符串</span><br><span class="line">2. 类语法糖</span><br><span class="line">3. 箭头函数</span><br><span class="line">4. 对象字面量</span><br><span class="line">5. Promise</span><br><span class="line">6. 新的字符串方法</span><br><span class="line">7. let 和 const</span><br></pre></td></tr></table></figure>
+<h2 id="v6x"><a class="markdownIt-Anchor" href="#v6x"></a> v6.x</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">nodejs更新主要新特性</span><br><span class="line">1. 默认函数参数</span><br><span class="line">2. 展开操作符</span><br><span class="line">3. 解构赋值</span><br><span class="line">4. new.target</span><br><span class="line">5. Proxy, 原生对象</span><br><span class="line">6. Reflect, 原生对象</span><br><span class="line">7. Symbol, 原生对象</span><br></pre></td></tr></table></figure>
+<h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+<ul>
 <li><a href="http://wwsun.github.io/posts/upgrade-to-node-v4.html" target="_blank" rel="noopener">v4</a></li>
 <li><a href="http://www.tuicool.com/articles/bqmiU3q" target="_blank" rel="noopener">v6</a></li>
 </ul>
@@ -568,7 +752,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="靳懿的个人博客">
+      <meta itemprop="name" content="∑">
     </span>
 
     
@@ -687,8 +871,11 @@
       
         
           <p>简明的linux服务器安全设置指南, 包括: 公钥登录, 禁止密码登录, 禁用 root 账户等.</p>
-<p>公司的阿里云主机常年被 ssh 外加 http 各种扫, 除了一方面写出更加安全, 健壮的代码之外, 另一方面服务器的安全设置也不容忽视.<br>下面是我自己常用的服务器端相关配置. 阿里云主机, centOS 6.x.</p>
-<h2 id="账户设置"><a href="#账户设置" class="headerlink" title="账户设置"></a>账户设置</h2><p>添加公共账户, 避免直接使用 root 账户.<br>阿里云的主机默认只提供了一个 root 账户, 我们需要添加一个工作账户, 并赋予 root 权限, 避免直接使用 root.</p>
+<p>公司的阿里云主机常年被 ssh 外加 http 各种扫, 除了一方面写出更加安全, 健壮的代码之外, 另一方面服务器的安全设置也不容忽视.<br>
+下面是我自己常用的服务器端相关配置. 阿里云主机, centOS 6.x.</p>
+<h2 id="账户设置"><a class="markdownIt-Anchor" href="#账户设置"></a> 账户设置</h2>
+<p>添加公共账户, 避免直接使用 root 账户.<br>
+阿里云的主机默认只提供了一个 root 账户, 我们需要添加一个工作账户, 并赋予 root 权限, 避免直接使用 root.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useradd devops         //添加 devops 账户</span><br><span class="line">passwd devops          //修改 devops 账户密码</span><br><span class="line">useradd -G root devops //添加 devops 到 root 用户组</span><br></pre></td></tr></table></figure>
 <p>这样我们就拥有了一个 root 权限的账户, 接下来就是禁止 root 账户的 shell 登录和使用.</p>
           <!--noindex-->
@@ -763,7 +950,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="靳懿的个人博客">
+      <meta itemprop="name" content="∑">
     </span>
 
     
@@ -882,8 +1069,11 @@
       
         
           <p>使用 ngxin 时添加IP访问控制是常见需求, 最近遇到该需求, 简单记录如下.</p>
-<h2 id="模块依赖"><a href="#模块依赖" class="headerlink" title="模块依赖"></a>模块依赖</h2><p> nginx 的 IP 访问控制依赖于内置的 <code>ngx_http_access_module</code>. 在默认情况下, 这个包在编译中是安装的, 除非编译过程中显示指定<code>--without ngx_http_access_module</code>.</p>
-<h2 id="配置方法"><a href="#配置方法" class="headerlink" title="配置方法"></a>配置方法</h2><p>样例配置如下, example.conf<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> / &#123;</span><br><span class="line">    <span class="attribute">deny</span>  <span class="number">192.168.1.1</span>;</span><br><span class="line">    <span class="attribute">allow</span> <span class="number">192.168.1.0</span>/<span class="number">24</span>;</span><br><span class="line">    <span class="attribute">allow</span> <span class="number">10.1.1.0</span>/<span class="number">16</span>;</span><br><span class="line">    <span class="attribute">allow</span> <span class="number">2001</span>:0db8::/<span class="number">32</span>;</span><br><span class="line">    <span class="attribute">deny</span>  all;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="模块依赖"><a class="markdownIt-Anchor" href="#模块依赖"></a> 模块依赖</h2>
+<p>nginx 的 IP 访问控制依赖于内置的 <code>ngx_http_access_module</code>. 在默认情况下, 这个包在编译中是安装的, 除非编译过程中显示指定<code>--without ngx_http_access_module</code>.</p>
+<h2 id="配置方法"><a class="markdownIt-Anchor" href="#配置方法"></a> 配置方法</h2>
+<p>样例配置如下, example.conf</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> / &#123;</span><br><span class="line">    <span class="attribute">deny</span>  <span class="number">192.168.1.1</span>;</span><br><span class="line">    <span class="attribute">allow</span> <span class="number">192.168.1.0</span>/<span class="number">24</span>;</span><br><span class="line">    <span class="attribute">allow</span> <span class="number">10.1.1.0</span>/<span class="number">16</span>;</span><br><span class="line">    <span class="attribute">allow</span> <span class="number">2001</span>:0db8::/<span class="number">32</span>;</span><br><span class="line">    <span class="attribute">deny</span>  all;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -956,7 +1146,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="靳懿的个人博客">
+      <meta itemprop="name" content="∑">
     </span>
 
     
@@ -1039,7 +1229,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">639</span>
+                <span title="本文字数">644</span>
               
 
               
@@ -1075,8 +1265,12 @@
       
         
           <p>2016年新年读书计划, 准备深入学习JavaScript 的前端和后端开发, 大致了解一下 web 开发周围的相关知识.</p>
-<h2 id="网络相关"><a href="#网络相关" class="headerlink" title="网络相关"></a>网络相关</h2><p>  http 协议的深入了解, nginx 开发相关, web 安全相关<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* 图解 http</span><br><span class="line">* http 权威指南</span><br><span class="line">* 跟我学 Nginx + Lua 开发</span><br><span class="line">* Programming in Lua 3ed</span><br><span class="line">* 白帽子讲 web 安全</span><br></pre></td></tr></table></figure></p>
-<h2 id="web-前端相关"><a href="#web-前端相关" class="headerlink" title="web 前端相关"></a>web 前端相关</h2><p>  html&amp;css 深入理解, bootstrap 框架, JavaScript 深入学习<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* html5 与 css3 基础教程</span><br><span class="line">* css 禅意花园</span><br><span class="line">* css 权威指南</span><br><span class="line">* 深入理解 bootstrap</span><br><span class="line">* JavaScript 高级程序设计(第三版)</span><br><span class="line">* JavaScript 启示录</span><br><span class="line">* JavaScript 语言精粹</span><br></pre></td></tr></table></figure></p>
+<h2 id="网络相关"><a class="markdownIt-Anchor" href="#网络相关"></a> 网络相关</h2>
+<p>http 协议的深入了解, nginx 开发相关, web 安全相关</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* 图解 http</span><br><span class="line">* http 权威指南</span><br><span class="line">* 跟我学 Nginx + Lua 开发</span><br><span class="line">* Programming in Lua 3ed</span><br><span class="line">* 白帽子讲 web 安全</span><br></pre></td></tr></table></figure>
+<h2 id="web-前端相关"><a class="markdownIt-Anchor" href="#web-前端相关"></a> web 前端相关</h2>
+<p>html&amp;css 深入理解, bootstrap 框架, JavaScript 深入学习</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* html5 与 css3 基础教程</span><br><span class="line">* css 禅意花园</span><br><span class="line">* css 权威指南</span><br><span class="line">* 深入理解 bootstrap</span><br><span class="line">* JavaScript 高级程序设计(第三版)</span><br><span class="line">* JavaScript 启示录</span><br><span class="line">* JavaScript 语言精粹</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1173,7 +1367,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1352,7 +1546,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">33k</span>
   
 
   
@@ -1361,7 +1555,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">30 分钟</span>
   
 </div>
 
@@ -1827,6 +2021,8 @@
 
   
   
+    
+      
     
       
     

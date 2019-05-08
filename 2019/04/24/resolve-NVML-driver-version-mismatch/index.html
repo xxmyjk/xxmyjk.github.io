@@ -103,22 +103,22 @@
 
 
 
-  <meta name="description" content="服务器更新 nvidia driver 后遇到以下问题: Failed to initialize NVML: Driver/library version mismatch 一句话解决方案:12# su 权限lsmod | grep -i ^nvidia | awk &apos;&amp;#123;print $1&amp;#125;&apos; | rmmod &amp;amp;&amp;amp; nvidia-smi 或者 12# 雾sudo">
+  <meta name="description" content="服务器更新 nvidia driver 后遇到以下问题: Failed to initialize NVML: Driver/library version mismatch  一句话解决方案: 12# su 权限lsmod | grep -i ^nvidia | awk &apos;&amp;#123;print $1&amp;#125;&apos; | rmmod &amp;amp;&amp;amp; nvidia-smi 或者 12# 雾su">
 <meta name="keywords" content="运维,linux,nvidia">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决 &quot;Failed to Initialize NVML: Driver&#x2F;library Version Mismatch&quot;">
 <meta property="og:url" content="https://blog.github.pub/2019/04/24/resolve-NVML-driver-version-mismatch/index.html">
-<meta property="og:site_name" content="靳懿的个人博客">
-<meta property="og:description" content="服务器更新 nvidia driver 后遇到以下问题: Failed to initialize NVML: Driver/library version mismatch 一句话解决方案:12# su 权限lsmod | grep -i ^nvidia | awk &apos;&amp;#123;print $1&amp;#125;&apos; | rmmod &amp;amp;&amp;amp; nvidia-smi 或者 12# 雾sudo">
+<meta property="og:site_name" content="∑">
+<meta property="og:description" content="服务器更新 nvidia driver 后遇到以下问题: Failed to initialize NVML: Driver/library version mismatch  一句话解决方案: 12# su 权限lsmod | grep -i ^nvidia | awk &apos;&amp;#123;print $1&amp;#125;&apos; | rmmod &amp;amp;&amp;amp; nvidia-smi 或者 12# 雾su">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-04-24T09:45:55.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决 &quot;Failed to Initialize NVML: Driver&#x2F;library Version Mismatch&quot;">
-<meta name="twitter:description" content="服务器更新 nvidia driver 后遇到以下问题: Failed to initialize NVML: Driver/library version mismatch 一句话解决方案:12# su 权限lsmod | grep -i ^nvidia | awk &apos;&amp;#123;print $1&amp;#125;&apos; | rmmod &amp;amp;&amp;amp; nvidia-smi 或者 12# 雾sudo">
+<meta name="twitter:description" content="服务器更新 nvidia driver 后遇到以下问题: Failed to initialize NVML: Driver/library version mismatch  一句话解决方案: 12# su 权限lsmod | grep -i ^nvidia | awk &apos;&amp;#123;print $1&amp;#125;&apos; | rmmod &amp;amp;&amp;amp; nvidia-smi 或者 12# 雾su">
 
 
 
-  <link rel="alternate" href="/atom.xml" title="靳懿的个人博客" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="∑" type="application/atom+xml">
 
 
 
@@ -134,7 +134,7 @@
   };
 </script>
 
-  <title>解决 "Failed to Initialize NVML: Driver/library Version Mismatch" | 靳懿的个人博客</title>
+  <title>解决 "Failed to Initialize NVML: Driver/library Version Mismatch" | ∑</title>
   
 
 
@@ -204,7 +204,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">靳懿的个人博客</span>
+        <span class="site-title">∑</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -395,7 +395,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="靳懿的个人博客">
+      <meta itemprop="name" content="∑">
     </span>
 
     
@@ -464,7 +464,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">697</span>
+                <span title="本文字数">706</span>
               
 
               
@@ -500,11 +500,15 @@
       
         <p>服务器更新 <code>nvidia driver</code> 后遇到以下问题:</p>
 <p><code>Failed to initialize NVML: Driver/library version mismatch</code></p>
-<h2 id="一句话解决方案"><a href="#一句话解决方案" class="headerlink" title="一句话解决方案:"></a>一句话解决方案:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># su 权限</span></span><br><span class="line">lsmod | grep -i ^nvidia | awk <span class="string">'&#123;print $1&#125;'</span> | rmmod &amp;&amp; nvidia-smi</span><br></pre></td></tr></table></figure>
+<h2 id="一句话解决方案"><a class="markdownIt-Anchor" href="#一句话解决方案"></a> 一句话解决方案:</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># su 权限</span></span><br><span class="line">lsmod | grep -i ^nvidia | awk <span class="string">'&#123;print $1&#125;'</span> | rmmod &amp;&amp; nvidia-smi</span><br></pre></td></tr></table></figure>
 <p>或者</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 雾</span></span><br><span class="line">sudo reboot</span><br></pre></td></tr></table></figure>
-<h2 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析:"></a>原因分析:</h2><p>驱动更新后 linux 内核对应驱动的 kernel module 并没有重置, 外部相关进程引用了旧版本驱动相关的 mod, 需要手动卸载, 重新执行 <code>nvidia-smi</code><br>会自动加载新版本 mod 到内核</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>卸载过程可能会因为相关进程引用或者内核 mod 引用顺序导致卸载失败, 这时需要按照提示顺序卸载.</p>
+<h2 id="原因分析"><a class="markdownIt-Anchor" href="#原因分析"></a> 原因分析:</h2>
+<p>驱动更新后 linux 内核对应驱动的 kernel module 并没有重置, 外部相关进程引用了旧版本驱动相关的 mod, 需要手动卸载, 重新执行 <code>nvidia-smi</code><br>
+会自动加载新版本 mod 到内核</p>
+<h2 id="注意"><a class="markdownIt-Anchor" href="#注意"></a> 注意</h2>
+<p>卸载过程可能会因为相关进程引用或者内核 mod 引用顺序导致卸载失败, 这时需要按照提示顺序卸载.</p>
 <a id="more"></a>
 <p>比如:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rmmod nvidia</span><br><span class="line">&gt; rmmod: ERROR: Module nvidia is <span class="keyword">in</span> use by: nvidia_modeset nvidia_uvm</span><br></pre></td></tr></table></figure>
@@ -522,7 +526,8 @@
 <li>kernel mod 加载</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">modprobe</span><br></pre></td></tr></table></figure>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+<ul>
 <li><a href="https://stackoverflow.com/questions/43022843/nvidia-nvml-driver-library-version-mismatch" target="_blank" rel="noopener">stackoverflow</a></li>
 <li><a href="https://comzyh.com/blog/archives/967/" target="_blank" rel="noopener">Comzyh的博客</a></li>
 <li><a href="https://wiki.archlinux.org/index.php/Kernel_module" target="_blank" rel="noopener">archlinux</a></li>
@@ -687,7 +692,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -850,7 +855,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一句话解决方案"><span class="nav-number">1.</span> <span class="nav-text">一句话解决方案:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原因分析"><span class="nav-number">2.</span> <span class="nav-text">原因分析:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">3.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一句话解决方案"><span class="nav-number">1.</span> <span class="nav-text"> 一句话解决方案:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原因分析"><span class="nav-number">2.</span> <span class="nav-text"> 原因分析:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">3.</span> <span class="nav-text"> 注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text"> 参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -883,7 +888,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">33k</span>
   
 
   
@@ -892,7 +897,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">30 分钟</span>
   
 </div>
 

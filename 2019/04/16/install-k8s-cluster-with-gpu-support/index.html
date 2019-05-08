@@ -103,22 +103,22 @@
 
 
 
-  <meta name="description" content="docker installation optional: clean old version if needed 1234567891011sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-common">
-<meta name="keywords" content="运维,kubernetes,linux">
+  <meta name="description" content="docker installation  optional: clean old version if needed  1234567891011sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-comm">
+<meta name="keywords" content="运维,linux,kubernetes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="支持 GPU 调度的 Kubernetes 部署方案(CentOS)">
 <meta property="og:url" content="https://blog.github.pub/2019/04/16/install-k8s-cluster-with-gpu-support/index.html">
-<meta property="og:site_name" content="靳懿的个人博客">
-<meta property="og:description" content="docker installation optional: clean old version if needed 1234567891011sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-common">
+<meta property="og:site_name" content="∑">
+<meta property="og:description" content="docker installation  optional: clean old version if needed  1234567891011sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-comm">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-01T13:37:58.705Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="支持 GPU 调度的 Kubernetes 部署方案(CentOS)">
-<meta name="twitter:description" content="docker installation optional: clean old version if needed 1234567891011sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-common">
+<meta name="twitter:description" content="docker installation  optional: clean old version if needed  1234567891011sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-comm">
 
 
 
-  <link rel="alternate" href="/atom.xml" title="靳懿的个人博客" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="∑" type="application/atom+xml">
 
 
 
@@ -134,7 +134,7 @@
   };
 </script>
 
-  <title>支持 GPU 调度的 Kubernetes 部署方案(CentOS) | 靳懿的个人博客</title>
+  <title>支持 GPU 调度的 Kubernetes 部署方案(CentOS) | ∑</title>
   
 
 
@@ -204,7 +204,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">靳懿的个人博客</span>
+        <span class="site-title">∑</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -395,7 +395,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="靳懿的个人博客">
+      <meta itemprop="name" content="∑">
     </span>
 
     
@@ -510,69 +510,86 @@
       
 
       
-        <h2 id="docker-installation"><a href="#docker-installation" class="headerlink" title="docker installation"></a>docker installation</h2><ul>
-<li><p>optional: clean old version if needed</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine \</span><br><span class="line">                  docker-ce \</span><br><span class="line">                  docker-ce-cli \</span><br><span class="line">                  containerd.io</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>install yum utils</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>add docker-ce repo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line">    https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-</li>
+        <h2 id="docker-installation"><a class="markdownIt-Anchor" href="#docker-installation"></a> docker installation</h2>
+<ul>
+<li>optional: clean old version if needed</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine \</span><br><span class="line">                  docker-ce \</span><br><span class="line">                  docker-ce-cli \</span><br><span class="line">                  containerd.io</span><br></pre></td></tr></table></figure>
+<ul>
+<li>install yum utils</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+<ul>
+<li>add docker-ce repo</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line">    https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <ul>
-<li><p>install docker-ce</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>optional: setup docker <code>data-root</code></p>
-</li>
+<li>install docker-ce</li>
 </ul>
-<p><code>dockerd</code> store <code>images/caches/volumes ...</code> data in <code>/var/lib/docker</code> by default, and the <code>kuberntes</code> will GC docker<br>image NOT CURRENT IN USING, change the <code>data-root</code> to a large disk portion.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+<ul>
+<li>optional: setup docker <code>data-root</code></li>
+</ul>
+<p><code>dockerd</code> store <code>images/caches/volumes ...</code> data in <code>/var/lib/docker</code> by default, and the <code>kuberntes</code> will GC docker<br>
+image NOT CURRENT IN USING, change the <code>data-root</code> to a large disk portion.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /usr/lib/systemd/system/docker.service</span><br><span class="line"></span><br><span class="line">&gt; append --data-root &lt;a large disk portion&gt; behind dockerd Exec</span><br></pre></td></tr></table></figure>
-<h2 id="nvidia-docker-nvidia-container-runtime-installation"><a href="#nvidia-docker-nvidia-container-runtime-installation" class="headerlink" title="nvidia-docker | nvidia-container-runtime installation"></a>nvidia-docker | nvidia-container-runtime installation</h2><ul>
-<li><p>add nvidia-docker repo</p>
+<h2 id="nvidia-docker-nvidia-container-runtime-installation"><a class="markdownIt-Anchor" href="#nvidia-docker-nvidia-container-runtime-installation"></a> nvidia-docker | nvidia-container-runtime installation</h2>
+<ul>
+<li>add nvidia-docker repo</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">distribution=$(. /etc/os-release;echo $ID$VERSION_ID)</span><br><span class="line">curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.repo | \</span><br><span class="line">  sudo tee /etc/yum.repos.d/nvidia-docker.repo</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>install nvidia-docker</p>
+<ul>
+<li>install nvidia-docker</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install nvidia-docker2</span><br><span class="line">sudo pkill -SIGHUP dockerd</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>modify <code>/etc/docker/daemon.json</code> to enable <code>nvidia</code> as default docker runtime</p>
 </li>
-<li><p>modify <code>/etc/docker/daemon.json</code> to enable <code>nvidia</code> as default docker runtime</p>
+<li>
+<p>optional: setup your own <code>shadowsocks server &amp; client &amp; privoxy</code></p>
 </li>
-<li><p>optional: setup your own <code>shadowsocks server &amp; client &amp; privoxy</code></p>
-</li>
-<li><p>modify <code>/usr/lib/systemd/system/docker.server</code> to enable docker image pull access to <code>gcr.io</code></p>
+<li>
+<p>modify <code>/usr/lib/systemd/system/docker.server</code> to enable docker image pull access to <code>gcr.io</code></p>
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Environment=&quot;HTTP_PROXY=x.x.x.x:xx;HTTPS_PROXY=x.x.x.x:xx;NO_PROXY=x.x.x.x:xx&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="kubernetes-stack-installation-local-kubelet"><a href="#kubernetes-stack-installation-local-kubelet" class="headerlink" title="kubernetes stack installation (local kubelet)"></a>kubernetes stack installation (local kubelet)</h2><ul>
+<h2 id="kubernetes-stack-installation-local-kubelet"><a class="markdownIt-Anchor" href="#kubernetes-stack-installation-local-kubelet"></a> kubernetes stack installation (local kubelet)</h2>
+<ul>
 <li>optional: remove outdated kubeadm, kubelet, kubectl</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove -y kubeadm kubelet kubectl</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p><code>kubelet</code>, <code>kubectl</code>, <code>kubeadm</code> install</p>
+<li>
+<p><code>kubelet</code>, <code>kubectl</code>, <code>kubeadm</code> install</p>
 <blockquote>
 <p>follow <a href="https://kubernetes.io/docs/setup/independent/install-kubeadm/" target="_blank" rel="noopener">here</a></p>
 </blockquote>
 </li>
-<li><p>using <code>kubeadm</code> to install <code>HA</code> cluster</p>
+<li>
+<p>using <code>kubeadm</code> to install <code>HA</code> cluster</p>
 <blockquote>
 <p>follow <a href="https://kubernetes.io/docs/setup/independent/setup-ha-etcd-with-kubeadm/" target="_blank" rel="noopener">here</a></p>
 </blockquote>
 </li>
 </ul>
-<h2 id="kubernetes-stack-installation-rke-gt-stack-in-docker"><a href="#kubernetes-stack-installation-rke-gt-stack-in-docker" class="headerlink" title="kubernetes stack installation (rke -&gt; stack in docker)"></a>kubernetes stack installation (rke -&gt; stack in docker)</h2><ul>
-<li><p>install <a href="https://github.com/rancher/rke" target="_blank" rel="noopener">rke</a></p>
+<h2 id="kubernetes-stack-installation-rke-stack-in-docker"><a class="markdownIt-Anchor" href="#kubernetes-stack-installation-rke-stack-in-docker"></a> kubernetes stack installation (rke -&gt; stack in docker)</h2>
+<ul>
+<li>
+<p>install <a href="https://github.com/rancher/rke" target="_blank" rel="noopener">rke</a></p>
 </li>
-<li><p>rke up</p>
+<li>
+<p>rke up</p>
 </li>
 </ul>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attr">nodes:</span></span><br><span class="line"><span class="attr">    - address:</span> <span class="number">192.168</span><span class="number">.1</span><span class="number">.14</span></span><br><span class="line"><span class="attr">      user:</span> <span class="string">jinyi</span></span><br><span class="line"><span class="attr">      role:</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">controlplane</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">etcd</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">worker</span></span><br><span class="line"><span class="attr">    - address:</span> <span class="number">192.168</span><span class="number">.1</span><span class="number">.15</span></span><br><span class="line"><span class="attr">      user:</span> <span class="string">jinyi</span></span><br><span class="line"><span class="attr">      role:</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">controlplane</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">etcd</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">worker</span></span><br><span class="line"><span class="attr">    - address:</span> <span class="number">192.168</span><span class="number">.1</span><span class="number">.16</span></span><br><span class="line"><span class="attr">      user:</span> <span class="string">jinyi</span></span><br><span class="line"><span class="attr">      role:</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">controlplane</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">etcd</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">worker</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>more config <a href="https://rancher.com/docs/rke/latest/en/" target="_blank" rel="noopener">here</a></li>
 </ul>
-<h2 id="apply-services-amp-conf-to-cluster"><a href="#apply-services-amp-conf-to-cluster" class="headerlink" title="apply services &amp; conf to cluster"></a>apply services &amp; conf to cluster</h2><h3 id="kubernetes-dashboard"><a href="#kubernetes-dashboard" class="headerlink" title="kubernetes-dashboard"></a>kubernetes-dashboard</h3><ul>
+<h2 id="apply-services-conf-to-cluster"><a class="markdownIt-Anchor" href="#apply-services-conf-to-cluster"></a> apply services &amp; conf to cluster</h2>
+<h3 id="kubernetes-dashboard"><a class="markdownIt-Anchor" href="#kubernetes-dashboard"></a> kubernetes-dashboard</h3>
+<ul>
 <li>apply stable <code>kubernetes-dashboard</code></li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml</span><br></pre></td></tr></table></figure>
@@ -585,9 +602,11 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">kubectl -n kube-system describe secrets admin-user | grep token:</span><br><span class="line"></span><br><span class="line"><span class="comment"># copy the output token to clipboard</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># start local proxy</span></span><br><span class="line">kubectl proxy</span><br><span class="line"></span><br><span class="line"><span class="comment"># open in bro</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>open in browser <a href="http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/" target="_blank" rel="noopener">kubernetes-dashboard</a></p>
+<li>
+<p>open in browser <a href="http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/" target="_blank" rel="noopener">kubernetes-dashboard</a></p>
 </li>
-<li><p>enter <code>token</code> you copy before &amp; login</p>
+<li>
+<p>enter <code>token</code> you copy before &amp; login</p>
 </li>
 </ul>
 
@@ -648,9 +667,9 @@
           
             <a href="/tags/运维/" rel="tag"># 运维</a>
           
-            <a href="/tags/kubernetes/" rel="tag"># kubernetes</a>
-          
             <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/kubernetes/" rel="tag"># kubernetes</a>
           
         </div>
       
@@ -750,7 +769,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -913,7 +932,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-installation"><span class="nav-number">1.</span> <span class="nav-text">docker installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nvidia-docker-nvidia-container-runtime-installation"><span class="nav-number">2.</span> <span class="nav-text">nvidia-docker | nvidia-container-runtime installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kubernetes-stack-installation-local-kubelet"><span class="nav-number">3.</span> <span class="nav-text">kubernetes stack installation (local kubelet)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kubernetes-stack-installation-rke-gt-stack-in-docker"><span class="nav-number">4.</span> <span class="nav-text">kubernetes stack installation (rke -&gt; stack in docker)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apply-services-amp-conf-to-cluster"><span class="nav-number">5.</span> <span class="nav-text">apply services &amp; conf to cluster</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#kubernetes-dashboard"><span class="nav-number">5.1.</span> <span class="nav-text">kubernetes-dashboard</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-installation"><span class="nav-number">1.</span> <span class="nav-text"> docker installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nvidia-docker-nvidia-container-runtime-installation"><span class="nav-number">2.</span> <span class="nav-text"> nvidia-docker | nvidia-container-runtime installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kubernetes-stack-installation-local-kubelet"><span class="nav-number">3.</span> <span class="nav-text"> kubernetes stack installation (local kubelet)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kubernetes-stack-installation-rke-stack-in-docker"><span class="nav-number">4.</span> <span class="nav-text"> kubernetes stack installation (rke -&gt; stack in docker)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apply-services-conf-to-cluster"><span class="nav-number">5.</span> <span class="nav-text"> apply services &amp; conf to cluster</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#kubernetes-dashboard"><span class="nav-number">5.1.</span> <span class="nav-text"> kubernetes-dashboard</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -946,7 +965,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">33k</span>
   
 
   
@@ -955,7 +974,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">30 分钟</span>
   
 </div>
 

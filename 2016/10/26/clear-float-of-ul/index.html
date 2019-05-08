@@ -108,7 +108,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Css中清除浮动的几种方式">
 <meta property="og:url" content="https://blog.github.pub/2016/10/26/clear-float-of-ul/index.html">
-<meta property="og:site_name" content="靳懿的个人博客">
+<meta property="og:site_name" content="∑">
 <meta property="og:description" content="前端使用 ul &amp;gt; li + float 方式生成一个 navbar 是一种常见的页面展示手段, 但是浮动之后会导致ul高度无法正常撑起, 所以需要清除浮动以正常撑起父元素高度. 这里介绍几种常见的浮动清除的方式. 123456&amp;lt;ul&amp;gt;    &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;&amp;lt;/li&amp;g">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-10-26T10:58:47.000Z">
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="靳懿的个人博客" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="∑" type="application/atom+xml">
 
 
 
@@ -134,7 +134,7 @@
   };
 </script>
 
-  <title>Css中清除浮动的几种方式 | 靳懿的个人博客</title>
+  <title>Css中清除浮动的几种方式 | ∑</title>
   
 
 
@@ -204,7 +204,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">靳懿的个人博客</span>
+        <span class="site-title">∑</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -395,7 +395,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="靳懿的个人博客">
+      <meta itemprop="name" content="∑">
     </span>
 
     
@@ -502,13 +502,22 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">list-style-type</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: right;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: <span class="number">5%</span>;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="给ul添加高度"><a href="#给ul添加高度" class="headerlink" title="给ul添加高度"></a>给ul添加高度</h3><pre><code>这个是最直接的方法, 给`ul`元素添加一个高度
+<h3 id="给ul添加高度"><a class="markdownIt-Anchor" href="#给ul添加高度"></a> 给ul添加高度</h3>
+<pre><code>这个是最直接的方法, 给`ul`元素添加一个高度
 
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="给最后一个li后添加一个-空的-div-给div添加clear-both样式"><a href="#给最后一个li后添加一个-空的-div-给div添加clear-both样式" class="headerlink" title="给最后一个li后添加一个 空的 div, 给div添加clear: both样式"></a>给最后一个li后添加一个 <strong>空的</strong> <code>div</code>, 给<code>div</code>添加<code>clear: both</code>样式</h3><pre><code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"clear:both;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="给ul添加overflow-hidden-zoom-1样式"><a href="#给ul添加overflow-hidden-zoom-1样式" class="headerlink" title="给ul添加overflow: hidden; zoom: 1样式"></a>给ul添加<code>overflow: hidden; zoom: 1</code>样式</h3><pre><code><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">zoom</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="使用-ul-伪类-进行浮动清除-对ul添加class-quot-clearfix-quot"><a href="#使用-ul-伪类-进行浮动清除-对ul添加class-quot-clearfix-quot" class="headerlink" title="使用 ul 伪类 进行浮动清除, 对ul添加class=&quot;clearfix&quot;"></a>使用 ul <strong>伪类</strong> 进行浮动清除, 对<code>ul</code>添加<code>class=&quot;clearfix&quot;</code></h3><pre><code><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">    *zoom: 1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>, <span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><ul>
+</code></pre>
+<h3 id="给最后一个li后添加一个-空的-div-给div添加clear-both样式"><a class="markdownIt-Anchor" href="#给最后一个li后添加一个-空的-div-给div添加clear-both样式"></a> 给最后一个li后添加一个 <strong>空的</strong> <code>div</code>, 给<code>div</code>添加<code>clear: both</code>样式</h3>
+<pre><code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"clear:both;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</code></pre>
+<h3 id="给ul添加overflow-hidden-zoom-1样式"><a class="markdownIt-Anchor" href="#给ul添加overflow-hidden-zoom-1样式"></a> 给ul添加<code>overflow: hidden; zoom: 1</code>样式</h3>
+<pre><code><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">zoom</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h3 id="使用-ul-伪类-进行浮动清除-对ul添加classclearfix"><a class="markdownIt-Anchor" href="#使用-ul-伪类-进行浮动清除-对ul添加classclearfix"></a> 使用 ul <strong>伪类</strong> 进行浮动清除, 对<code>ul</code>添加<code>class=&quot;clearfix&quot;</code></h3>
+<pre><code><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">    *zoom: 1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>, <span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h4 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h4>
+<ul>
 <li><a href="http://www.tuicool.com/articles/3iuaMzn" target="_blank" rel="noopener">推酷</a></li>
 </ul>
 
@@ -671,7 +680,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -834,7 +843,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#给ul添加高度"><span class="nav-number">1.</span> <span class="nav-text">给ul添加高度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给最后一个li后添加一个-空的-div-给div添加clear-both样式"><span class="nav-number">2.</span> <span class="nav-text">给最后一个li后添加一个 空的 div, 给div添加clear: both样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给ul添加overflow-hidden-zoom-1样式"><span class="nav-number">3.</span> <span class="nav-text">给ul添加overflow: hidden; zoom: 1样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-ul-伪类-进行浮动清除-对ul添加class-quot-clearfix-quot"><span class="nav-number">4.</span> <span class="nav-text">使用 ul 伪类 进行浮动清除, 对ul添加class=&quot;clearfix&quot;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参考链接"><span class="nav-number">4.1.</span> <span class="nav-text">参考链接</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#给ul添加高度"><span class="nav-number">1.</span> <span class="nav-text"> 给ul添加高度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给最后一个li后添加一个-空的-div-给div添加clear-both样式"><span class="nav-number">2.</span> <span class="nav-text"> 给最后一个li后添加一个 空的 div, 给div添加clear: both样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给ul添加overflow-hidden-zoom-1样式"><span class="nav-number">3.</span> <span class="nav-text"> 给ul添加overflow: hidden; zoom: 1样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-ul-伪类-进行浮动清除-对ul添加classclearfix"><span class="nav-number">4.</span> <span class="nav-text"> 使用 ul 伪类 进行浮动清除, 对ul添加class=&quot;clearfix&quot;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参考链接"><span class="nav-number">4.1.</span> <span class="nav-text"> 参考链接</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -867,7 +876,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">33k</span>
   
 
   
@@ -876,7 +885,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">30 分钟</span>
   
 </div>
 

@@ -103,22 +103,22 @@
 
 
 
-  <meta name="description" content="使用 ngxin 时添加IP访问控制是常见需求, 最近遇到该需求, 简单记录如下. 模块依赖 nginx 的 IP 访问控制依赖于内置的 ngx_http_access_module. 在默认情况下, 这个包在编译中是安装的, 除非编译过程中显示指定--without ngx_http_access_module. 配置方法样例配置如下, example.conf1234567location /">
+  <meta name="description" content="使用 ngxin 时添加IP访问控制是常见需求, 最近遇到该需求, 简单记录如下.  模块依赖 nginx 的 IP 访问控制依赖于内置的 ngx_http_access_module. 在默认情况下, 这个包在编译中是安装的, 除非编译过程中显示指定--without ngx_http_access_module.  配置方法 样例配置如下, example.conf 1234567locati">
 <meta name="keywords" content="nginx,运维,安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx配置访问限制">
 <meta property="og:url" content="https://blog.github.pub/2016/03/17/Nginx-secret-limit-setting/index.html">
-<meta property="og:site_name" content="靳懿的个人博客">
-<meta property="og:description" content="使用 ngxin 时添加IP访问控制是常见需求, 最近遇到该需求, 简单记录如下. 模块依赖 nginx 的 IP 访问控制依赖于内置的 ngx_http_access_module. 在默认情况下, 这个包在编译中是安装的, 除非编译过程中显示指定--without ngx_http_access_module. 配置方法样例配置如下, example.conf1234567location /">
+<meta property="og:site_name" content="∑">
+<meta property="og:description" content="使用 ngxin 时添加IP访问控制是常见需求, 最近遇到该需求, 简单记录如下.  模块依赖 nginx 的 IP 访问控制依赖于内置的 ngx_http_access_module. 在默认情况下, 这个包在编译中是安装的, 除非编译过程中显示指定--without ngx_http_access_module.  配置方法 样例配置如下, example.conf 1234567locati">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-09-20T09:40:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx配置访问限制">
-<meta name="twitter:description" content="使用 ngxin 时添加IP访问控制是常见需求, 最近遇到该需求, 简单记录如下. 模块依赖 nginx 的 IP 访问控制依赖于内置的 ngx_http_access_module. 在默认情况下, 这个包在编译中是安装的, 除非编译过程中显示指定--without ngx_http_access_module. 配置方法样例配置如下, example.conf1234567location /">
+<meta name="twitter:description" content="使用 ngxin 时添加IP访问控制是常见需求, 最近遇到该需求, 简单记录如下.  模块依赖 nginx 的 IP 访问控制依赖于内置的 ngx_http_access_module. 在默认情况下, 这个包在编译中是安装的, 除非编译过程中显示指定--without ngx_http_access_module.  配置方法 样例配置如下, example.conf 1234567locati">
 
 
 
-  <link rel="alternate" href="/atom.xml" title="靳懿的个人博客" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="∑" type="application/atom+xml">
 
 
 
@@ -134,7 +134,7 @@
   };
 </script>
 
-  <title>Nginx配置访问限制 | 靳懿的个人博客</title>
+  <title>Nginx配置访问限制 | ∑</title>
   
 
 
@@ -204,7 +204,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">靳懿的个人博客</span>
+        <span class="site-title">∑</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -395,7 +395,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="靳懿的个人博客">
+      <meta itemprop="name" content="∑">
     </span>
 
     
@@ -511,34 +511,51 @@
 
       
         <p>使用 ngxin 时添加IP访问控制是常见需求, 最近遇到该需求, 简单记录如下.</p>
-<h2 id="模块依赖"><a href="#模块依赖" class="headerlink" title="模块依赖"></a>模块依赖</h2><p> nginx 的 IP 访问控制依赖于内置的 <code>ngx_http_access_module</code>. 在默认情况下, 这个包在编译中是安装的, 除非编译过程中显示指定<code>--without ngx_http_access_module</code>.</p>
-<h2 id="配置方法"><a href="#配置方法" class="headerlink" title="配置方法"></a>配置方法</h2><p>样例配置如下, example.conf<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> / &#123;</span><br><span class="line">    <span class="attribute">deny</span>  <span class="number">192.168.1.1</span>;</span><br><span class="line">    <span class="attribute">allow</span> <span class="number">192.168.1.0</span>/<span class="number">24</span>;</span><br><span class="line">    <span class="attribute">allow</span> <span class="number">10.1.1.0</span>/<span class="number">16</span>;</span><br><span class="line">    <span class="attribute">allow</span> <span class="number">2001</span>:0db8::/<span class="number">32</span>;</span><br><span class="line">    <span class="attribute">deny</span>  all;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="模块依赖"><a class="markdownIt-Anchor" href="#模块依赖"></a> 模块依赖</h2>
+<p>nginx 的 IP 访问控制依赖于内置的 <code>ngx_http_access_module</code>. 在默认情况下, 这个包在编译中是安装的, 除非编译过程中显示指定<code>--without ngx_http_access_module</code>.</p>
+<h2 id="配置方法"><a class="markdownIt-Anchor" href="#配置方法"></a> 配置方法</h2>
+<p>样例配置如下, example.conf</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> / &#123;</span><br><span class="line">    <span class="attribute">deny</span>  <span class="number">192.168.1.1</span>;</span><br><span class="line">    <span class="attribute">allow</span> <span class="number">192.168.1.0</span>/<span class="number">24</span>;</span><br><span class="line">    <span class="attribute">allow</span> <span class="number">10.1.1.0</span>/<span class="number">16</span>;</span><br><span class="line">    <span class="attribute">allow</span> <span class="number">2001</span>:0db8::/<span class="number">32</span>;</span><br><span class="line">    <span class="attribute">deny</span>  all;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>写完之后 include 到配置文件即可<br><code>include /path/to/your_conf/*.conf;</code><br>PS: 记得加分号, <code>;</code></p>
-<p>nginx 对于匹配顺序有如下规定: 任何一个 IP 地址, 访问了该 location 之后, 则<code>从上到下</code>对规则进行匹配, <code>漏斗</code>原则~ . ~ .<br>举例如下:</p>
+<p>写完之后 include 到配置文件即可<br>
+<code>include /path/to/your_conf/*.conf;</code><br>
+PS: 记得加分号, <code>;</code></p>
+<p>nginx 对于匹配顺序有如下规定: 任何一个 IP 地址, 访问了该 location 之后, 则<code>从上到下</code>对规则进行匹配, <code>漏斗</code>原则~ . ~ .<br>
+举例如下:</p>
 <ul>
 <li><code>192.168.1.1</code>: 进入之后匹配到第一个<code>IP/IP 段</code>, 则执行对应的规则 <code>deny</code>, 返回.</li>
 <li><code>192.168.1.12</code>: 进入之后第一个未匹配, 跳过; 匹配到第二个, 执行对应规则 <code>allow</code>, 返回.</li>
 <li><code>172.168.1.101</code>: 进入之后前四个都未匹配到, 匹配最后一个 <code>all</code>, 执行 <code>deny</code>, 返回.</li>
 </ul>
-<h2 id="配置语法"><a href="#配置语法" class="headerlink" title="配置语法"></a>配置语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Syntax: (allow|deny) address | CIDR | unix: | all</span><br><span class="line">Default: —</span><br><span class="line">Context: http, server, location, limit_except</span><br></pre></td></tr></table></figure>
-<p>语法设置可以为 <code>allow|deny</code> 两个关键字, 后面的对应属性可以为 IP 地址/地址段(可以使ipv4 或者 ipv6), CIRD(见<a href="#tip1">附1</a>), <code>unix:</code>, <code>all</code>, 无默认值.<br>配置模块可以出现在 nginx 的 <code>http{}</code>, <code>server{}</code>, <code>location{}</code>, <code>limit_except{}</code> 模块.<br>如果属性值配置为<code>unix:</code>, 则会允许或拒绝所有 Unix 域socket.(该选项只在 nginx 1.5.1之后的版本生效)</p>
-<h2 id="可用的第三方配置模块"><a href="#可用的第三方配置模块" class="headerlink" title="可用的第三方配置模块"></a>可用的第三方配置模块</h2><p> nginx 只提供了简单的静态 IP 控制, 不过在服务端接入层用于做长效黑名单控制已经足够了, 如果针对访问控制进行动态规则调整, 我找到了<code>这货</code><br> <a href="https://github.com/codehunte/ngx_white_black_list/blob/master/white_black_list.txt&#39;" target="_blank" rel="noopener">ngx_white_black_list</a></p>
+<h2 id="配置语法"><a class="markdownIt-Anchor" href="#配置语法"></a> 配置语法</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Syntax: (allow|deny) address | CIDR | unix: | all</span><br><span class="line">Default: —</span><br><span class="line">Context: http, server, location, limit_except</span><br></pre></td></tr></table></figure>
+<p>语法设置可以为 <code>allow|deny</code> 两个关键字, 后面的对应属性可以为 IP 地址/地址段(可以使ipv4 或者 ipv6), CIRD(见<a href="#tip1">附1</a>), <code>unix:</code>, <code>all</code>, 无默认值.<br>
+配置模块可以出现在 nginx 的 <code>http{}</code>, <code>server{}</code>, <code>location{}</code>, <code>limit_except{}</code> 模块.<br>
+如果属性值配置为<code>unix:</code>, 则会允许或拒绝所有 Unix 域socket.(该选项只在 nginx 1.5.1之后的版本生效)</p>
+<h2 id="可用的第三方配置模块"><a class="markdownIt-Anchor" href="#可用的第三方配置模块"></a> 可用的第三方配置模块</h2>
+<p>nginx 只提供了简单的静态 IP 控制, 不过在服务端接入层用于做长效黑名单控制已经足够了, 如果针对访问控制进行动态规则调整, 我找到了<code>这货</code><br>
+<a href="https://github.com/codehunte/ngx_white_black_list/blob/master/white_black_list.txt'" target="_blank" rel="noopener">ngx_white_black_list</a></p>
 <p>简单说到这里, 其实还是挺简单的, 注意理一下匹配规则.</p>
 <ul>
 <li><a href="#tip1">附1</a>:</li>
 </ul>
 <p><code>无类别域间路由</code></p>
 <blockquote>
-<p>无类别域间路由（Classless Inter-Domain Routing、CIDR）是一个用于给用户分配IP地址以及在互联网上有效地路由IP数据包的对IP地址进行归类的方法。<br>在域名系统出现之后的第一个十年里，基于分类网络进行地址分配和路由IP数据包的设计就已明显显得可扩充性不足 （参见RFC 1517）。为了解决这个问题，互联网工程工作小组在1993年发布了一新系列的标准——RFC 1518和RFC 1519——以定义新的分配IP地址块和路由IPv4数据包的方法。<br>一个IP地址包含两部分：标识网络的前缀和紧接着的在这个网络内的主机地址。在之前的分类网络中，IP地址的分配把IP地址的32位按每8位为一段分开。这使得前缀必须为8，16或者24位。因此，可分配的最小的地址块有256（24位前缀，8位主机地址，28=256）个地址，而这对大多数企业来说太少了。大一点的地址块包含65536（16位前缀，16位主机，216=65536）个地址，而这对大公司来说都太多了。这导致不能充分使用IP地址和在路由上的不便，因为大量的需要单独路由的小型网络（C类网络）因在地域上分得很开而很难进行聚合路由，于是给路由设备增加了很多负担。</p>
+<p>无类别域间路由（Classless Inter-Domain Routing、CIDR）是一个用于给用户分配IP地址以及在互联网上有效地路由IP数据包的对IP地址进行归类的方法。<br>
+在域名系统出现之后的第一个十年里，基于分类网络进行地址分配和路由IP数据包的设计就已明显显得可扩充性不足 （参见RFC 1517）。为了解决这个问题，互联网工程工作小组在1993年发布了一新系列的标准——RFC 1518和RFC 1519——以定义新的分配IP地址块和路由IPv4数据包的方法。<br>
+一个IP地址包含两部分：标识网络的前缀和紧接着的在这个网络内的主机地址。在之前的分类网络中，IP地址的分配把IP地址的32位按每8位为一段分开。这使得前缀必须为8，16或者24位。因此，可分配的最小的地址块有256（24位前缀，8位主机地址，28=256）个地址，而这对大多数企业来说太少了。大一点的地址块包含65536（16位前缀，16位主机，216=65536）个地址，而这对大公司来说都太多了。这导致不能充分使用IP地址和在路由上的不便，因为大量的需要单独路由的小型网络（C类网络）因在地域上分得很开而很难进行聚合路由，于是给路由设备增加了很多负担。</p>
 </blockquote>
 <p>&lt;</p>
 <blockquote>
-<p>无类别域间路由是基于可变长子网掩码（VLSM）来进行任意长度的前缀的分配的。在RFC 950（1985）中有关于可变长子网掩码的说明。CIDR包括：<br>指定任意长度的前缀的可变长子网掩码技术。遵从CIDR规则的地址有一个后缀说明前缀的位数，例如：192.168.0.0/16。这使得对日益缺乏的IPv4地址的使用更加有效。<br>将多个连续的前缀聚合成超网，以及，在互联网中，只要有可能，就显示为一个聚合的网络，因此在总体上可以减少路由表的表项数目。聚合使得互联网的路由表不用分为多级，并通过VLSM逆转“划分子网”的过程。<br>根据机构的实际需要和短期预期需要而不是分类网络中所限定的过大或过小的地址块来管理IP地址的分配的过程。<br>因为在IPv6中也使用了IPv4的用后缀指示前缀长度的CIDR，所以IPv4中的分类在IPv6中已不再使用。</p>
+<p>无类别域间路由是基于可变长子网掩码（VLSM）来进行任意长度的前缀的分配的。在RFC 950（1985）中有关于可变长子网掩码的说明。CIDR包括：<br>
+指定任意长度的前缀的可变长子网掩码技术。遵从CIDR规则的地址有一个后缀说明前缀的位数，例如：192.168.0.0/16。这使得对日益缺乏的IPv4地址的使用更加有效。<br>
+将多个连续的前缀聚合成超网，以及，在互联网中，只要有可能，就显示为一个聚合的网络，因此在总体上可以减少路由表的表项数目。聚合使得互联网的路由表不用分为多级，并通过VLSM逆转“划分子网”的过程。<br>
+根据机构的实际需要和短期预期需要而不是分类网络中所限定的过大或过小的地址块来管理IP地址的分配的过程。<br>
+因为在IPv6中也使用了IPv4的用后缀指示前缀长度的CIDR，所以IPv4中的分类在IPv6中已不再使用。</p>
 </blockquote>
 <p>&lt;</p>
 <blockquote>
-<p>摘自维基百科: <a href="&#39;https://zh.wikipedia.org/wiki/%E6%97%A0%E7%B1%BB%E5%88%AB%E5%9F%9F%E9%97%B4%E8%B7%AF%E7%94%B1&#39;">无类别域间路由</a></p>
+<p>摘自维基百科: <a href="'https://zh.wikipedia.org/wiki/%E6%97%A0%E7%B1%BB%E5%88%AB%E5%9F%9F%E9%97%B4%E8%B7%AF%E7%94%B1'">无类别域间路由</a></p>
 </blockquote>
 
       
@@ -700,7 +717,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -863,7 +880,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块依赖"><span class="nav-number">1.</span> <span class="nav-text">模块依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置方法"><span class="nav-number">2.</span> <span class="nav-text">配置方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置语法"><span class="nav-number">3.</span> <span class="nav-text">配置语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可用的第三方配置模块"><span class="nav-number">4.</span> <span class="nav-text">可用的第三方配置模块</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块依赖"><span class="nav-number">1.</span> <span class="nav-text"> 模块依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置方法"><span class="nav-number">2.</span> <span class="nav-text"> 配置方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置语法"><span class="nav-number">3.</span> <span class="nav-text"> 配置语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可用的第三方配置模块"><span class="nav-number">4.</span> <span class="nav-text"> 可用的第三方配置模块</span></a></li></ol></div>
             
 
           </div>
@@ -896,7 +913,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">33k</span>
   
 
   
@@ -905,7 +922,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">30 分钟</span>
   
 </div>
 
